@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1062
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muistipeli Actual", "Muistipeli Actual\Muistipeli Actual.csproj", "{10877C20-B265-4CE8-8E26-F58CF31EBC00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muistipeli Actual", "Muistipeli Actual.csproj", "{10877C20-B265-4CE8-8E26-F58CF31EBC00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

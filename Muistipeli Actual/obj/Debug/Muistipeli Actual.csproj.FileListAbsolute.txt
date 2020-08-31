@@ -7,3 +7,13 @@ C:\Users\Lenovo\Documents\Windows Forms\Muistipeli Actual\Muistipeli Actual\obj\
 C:\Users\Lenovo\Documents\Windows Forms\Muistipeli Actual\Muistipeli Actual\obj\Debug\Muistipeli Actual.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Documents\Windows Forms\Muistipeli Actual\Muistipeli Actual\obj\Debug\Muistipeli Actual.exe
 C:\Users\Lenovo\Documents\Windows Forms\Muistipeli Actual\Muistipeli Actual\obj\Debug\Muistipeli Actual.pdb
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\bin\Debug\Muistipeli Actual.exe.config
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\bin\Debug\Muistipeli Actual.exe
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\bin\Debug\Muistipeli Actual.pdb
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\obj\Debug\Muistipeli Actual.csprojAssemblyReference.cache
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\obj\Debug\Muistipeli_Actual.Properties.Resources.resources
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\obj\Debug\Muistipeli Actual.csproj.GenerateResource.cache
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\obj\Debug\Muistipeli Actual.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\obj\Debug\Muistipeli Actual.exe
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\obj\Debug\Muistipeli Actual.pdb
+C:\Users\Lenovo\Documents\Forms\Windows-Forms\Muistipeli Actual\obj\Debug\Muistipeli_Actual.Form1.resources

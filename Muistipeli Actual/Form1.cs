@@ -12,7 +12,6 @@ using System.IO;
 
 namespace Muistipeli_Actual
 {
-
     public partial class Form1 : Form
     {
         //Pelin tilan switch case enumeraattori luodaan.
@@ -41,7 +40,8 @@ namespace Muistipeli_Actual
         private ToolStripMenuItem onePlayer = new ToolStripMenuItem();
         private ToolStripMenuItem twoPlayer = new ToolStripMenuItem();
         private TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
-
+        private PictureBox pictureBox1 = new PictureBox();
+        
         private Label scoreboard = new Label();
         private int boxHeight = 100;
         private int boxWidth = 100;
@@ -49,7 +49,7 @@ namespace Muistipeli_Actual
         private Label secondClicked = null;
         private Label newGameButton = new Label();
         private Label closeThis = new Label();
-        private int difficultyModifier;
+        private int difficultyModifier = 1;
         private int rows = 4;
         private int columns = 4;
         private bool twoPlayerMode;
@@ -69,6 +69,9 @@ namespace Muistipeli_Actual
         
         public Form1()
         {
+            this.Size = new Size(640, 480);
+
+        
             //huipputuloksista luodaan ensiksi string-tyyppinen lista ja poistetaan viimeinen 
             highscoreList = highScoreFile.Split(' ').ToList();
             //Poistetaan listan viimeinen ' '-osa.
@@ -91,6 +94,9 @@ namespace Muistipeli_Actual
             hardDifficulty.Text = "Hard";
             onePlayer.Text = "One player";
             twoPlayer.Text = "Two players";
+            pictureBox1.Image = Image.FromFile("MUISTIPELI.png");
+            pictureBox1.Size = new Size(640, 480);
+
             easyDifficulty.Checked = true;
             fileMenu.TextAlign = ContentAlignment.TopLeft;
             
@@ -104,8 +110,9 @@ namespace Muistipeli_Actual
             twoPlayer.Click += new EventHandler(twoPlayer_Click);
             quitGame.Click += new EventHandler(FileClose_Click);
             highScore.Click += new EventHandler(Scoreboard_Click);
-            
-           //Liitetään ohjaimet ohjelmaan
+
+
+            //Liitetään ohjaimet ohjelmaan
             Controls.Add(MainMenu);
             fileMenu.DropDownItems.Add(startNewGame);
             fileMenu.DropDownItems.Add(highScore);
@@ -119,7 +126,10 @@ namespace Muistipeli_Actual
             MainMenu.Items.Add(fileMenu);
             InitializeComponent();
             scoreboard.Dock = DockStyle.Bottom;
+            Controls.Add(pictureBox1);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
         }
+
         //Poistumisnappula
         private void FileClose_Click(object sender, EventArgs e)
         {
@@ -142,11 +152,13 @@ namespace Muistipeli_Actual
         public void onePlayer_Click(object sender, EventArgs e)
         {
             twoPlayerMode = false;
+            pictureBox1.Hide();
             createGameBoard();
         }
         public void twoPlayer_Click(object sender, EventArgs e)
         {
             twoPlayerMode = true;
+            pictureBox1.Hide();
             createGameBoard();
         }
         public void easyDifficulty_Click(object sender, EventArgs e)
@@ -367,17 +379,23 @@ namespace Muistipeli_Actual
         }
         private void UpdateHighScore(int checkScore)
         {
+            //Verrataan uutta tulosta jokaiseen listan huipputulokseen.
             foreach (int score in highscoreIntList)
             {
                 if (checkScore > score)
                 {
+                    //Jos listalta löytyy yksikin pienempi tulos, päivitetään uutta huipputulosta
                     newHighScore = checkScore;
                 }
             }
+            /*Lisätään uusi tulos listaan, järjestetään lista uudestaan, käännetään lista laskevaan muotoon
+             ja poistetaan viimeinen tulos. Lopulta muutetaan newHighscore takaisin nollaksi, ettei uudella
+             kerralla sama tulos livahda listalle*/
             highscoreIntList.Add(newHighScore);
             highscoreIntList.Sort();
             highscoreIntList.Reverse();
             highscoreIntList.RemoveAt(10);
+            newHighScore = 0;
             File.WriteAllText("highscore.txt", String.Empty);
             using (StreamWriter highscorefile = File.AppendText("highscore.txt"))
             {
