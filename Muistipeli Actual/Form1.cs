@@ -41,6 +41,7 @@ namespace Muistipeli_Actual
         private ToolStripMenuItem twoPlayer = new ToolStripMenuItem();
         private TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
         private PictureBox pictureBox1 = new PictureBox();
+        private Random random = new Random();
         
         private Label scoreboard = new Label();
         private int boxHeight = 100;
@@ -226,8 +227,7 @@ namespace Muistipeli_Actual
 
         private string GetRandomIcon()
         {
-
-            Random random = new Random();
+            
             int randomNumber = random.Next(icons.Count);
             string selectedIcon = icons[randomNumber];
             icons.RemoveAt(randomNumber);
