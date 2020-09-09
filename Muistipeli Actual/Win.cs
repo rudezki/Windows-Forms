@@ -11,12 +11,9 @@ namespace Muistipeli_Actual
     
     class Win
     {
-        private Difficulty difficulty = new Difficulty();
-        private Score score = new Score();
-        private Create create = new Create();
-        public void Check()
+        public void Check(List<Label> allBoxes, Difficulty difficulty, Score score)
         {
-            foreach (Label l in create.allBoxes)
+            foreach (Label l in allBoxes)
             {
                 if (l.BackColor == Color.CornflowerBlue)
                 {
